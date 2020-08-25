@@ -1,9 +1,9 @@
-from .data_config import load_data, data_config
-from tpot import TPOTClassifier, TPOTRegressor
+from data_config.data_config import load_data, data_config
+from tpot import TPOTClassifier
 from sklearn.metrics import roc_auc_score
 
 from autogluon.utils.tabular.ml.models.lr.lr_model import LinearModel
-from .preprocessing_utils.featureGenerator import AutoMLFeatureGenerator
+from preprocessing_utils.featureGenerator import AutoMLFeatureGenerator
 import numpy as np
 from threading import Thread
 import time

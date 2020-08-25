@@ -31,11 +31,9 @@ data_config = {'adult-census': {'index_col': 'ID', 'ylabel': 'class'},
               }
 
 
-def load_data(data_name, local=False, combine_y=False, split_seed=2020, test_size=0.3):
-    if local:
-        data_path = f'/Users/menghao/Desktop/auto/autofast/autofast/examples/dataset/{data_name}.csv'
-    else:
-        data_path = f'/home/mwangbq/dataset/{data_name}.csv'
+def load_data(data_name,  combine_y=False, split_seed=2020, test_size=0.3):
+
+    data_path = f'dataset/{data_name}.csv'
 
     df = pd.read_csv(data_path, index_col=data_config[data_name]["index_col"])
     ylabel = data_config[data_name]['ylabel']

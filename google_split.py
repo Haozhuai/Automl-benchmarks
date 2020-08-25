@@ -1,4 +1,4 @@
-from .data_config import load_data, data_config
+from data_config.data_config import load_data, data_config
 import os
 
 if __name__ == '__main__':

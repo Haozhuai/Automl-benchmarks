@@ -3,7 +3,7 @@ import pickle
 import torch
 
 from sklearn.model_selection import StratifiedKFold
-from .data_config import data_config, load_data
+from data_config.data_config import data_config, load_data
 import numpy as np
 from sklearn.metrics import roc_auc_score
 

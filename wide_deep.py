@@ -3,7 +3,7 @@ wide and deep test, follow code from autogluon
 autogluon's NN architecture is based on wide and deep network
 """
 from autogluon import TabularPrediction as task
-from .data_config import load_data, data_config
+from data_config.data_config import load_data, data_config
 
 
 if __name__ == '__main__':

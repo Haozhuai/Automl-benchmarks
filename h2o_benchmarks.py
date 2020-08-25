@@ -2,7 +2,7 @@ import h2o, time
 from h2o.automl import H2OAutoML
 import pandas as pd
 import argparse
-from .data_config import load_data
+from data_config.data_config import load_data
 
 
 def h2o_train(X_train, X_test, y_train, y_test, seed=2020):
