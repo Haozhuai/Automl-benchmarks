@@ -1,8 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import re
 
-
-data_config = {'adult-census': {'index_col': 'ID', 'ylabel': 'class'},
+data_config = {'letter': {'index_col': None, 'ylabel': 'binaryClass'},
+              'adult-census': {'index_col': 'ID', 'ylabel': 'class'},
               'ailerons': {'index_col': None, 'ylabel': 'binaryClass'},
               'Amazon_employee_access': {'index_col':None, 'ylabel': 'target'},
               "bank-marketing": {'index_col':None, 'ylabel': 'Class'},
@@ -14,7 +15,6 @@ data_config = {'adult-census': {'index_col': 'ID', 'ylabel': 'class'},
               'elevators': {'index_col': None, 'ylabel': 'binaryClass'},
               'fried': {'index_col': None, 'ylabel': 'binaryClass'},
               'kdd_ipums_la_97-small': {'index_col': None, 'ylabel': 'binaryClass'},
-              'letter': {'index_col': None, 'ylabel': 'binaryClass'},
               'MagicTelescope': {'index_col': 'ID', 'ylabel': 'class:'},
               'New_aps_failure': {'index_col': None, 'ylabel': 'class'},
               'New_higgs': {'index_col': None, 'ylabel': 'class'},
@@ -27,8 +27,8 @@ data_config = {'adult-census': {'index_col': 'ID', 'ylabel': 'class'},
               'pendigits': {'index_col': None, 'ylabel': 'binaryClass'},
               'Run_or_walk_information': {'index_col': None, 'ylabel': 'activity'},
               'skin-segmentation': {'index_col': None, 'ylabel': 'Class'},
-              'sylva_prior': {'index_col': None, 'ylabel': 'label'}
-              }
+              'sylva_prior': {'index_col': None, 'ylabel': 'label'},
+              'airlines': {'index_col': None, 'ylabel': 'Delay'}}
 
 
 def load_data(data_name,  combine_y=False, split_seed=2020, test_size=0.3):
@@ -36,7 +36,11 @@ def load_data(data_name,  combine_y=False, split_seed=2020, test_size=0.3):
     data_path = f'dataset/{data_name}.csv'
 
     df = pd.read_csv(data_path, index_col=data_config[data_name]["index_col"])
+
+    df.columns = [re.sub(r'[",:{}[\]]', '', column) for column in df.columns]
+
     ylabel = data_config[data_name]['ylabel']
+    ylabel = re.sub(r'[",:{}[\]]', '', ylabel)
 
     # if not DataDict[data_name]['label_transform']:
     df[ylabel], _ = df[ylabel].factorize()
