@@ -20,7 +20,7 @@
     sh h2o_run.sh  # h2o benchmarks
     python google_split.py  # google dataset split, should pass the folder to google cloud and train each dataset by hand
     
-## result-table
+## result-table(Binary Classification: metric here is ROC-AUC)
 
 |dataset|autogluon|google|tpot|h2o|tabnet|wide_deep|default_lgb|default_cat|
 |---|---|---|---|---|---|---|---|---|
