@@ -8,6 +8,7 @@
     pytorch-tabnet # pip install pytorch-tabnet
     tpot  # pip install tpot
     h2o # python package, java should be installed before h2o
+    mxnet # pip install mxnet
     
 ## step
 
