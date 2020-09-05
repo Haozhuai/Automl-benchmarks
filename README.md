@@ -21,6 +21,15 @@
     python google_split.py  # google dataset split, should pass the folder to google cloud and train each dataset by hand
     
 ## result-table(Binary Classification: metric here is ROC-AUC)
+    autogluon is open-source automl from amazon
+    google is google cloud automl products(26 datasets cost me 4000+HKD)
+    tpot is popular automl toolkit
+    h2o is from h2o.ai, a famous AI company
+    tabnet is introduced by google cloud team, tring find a neural network architecture for tabular data
+    wide&deep is successful in recommendation system
+    default_lgb: default configuration of LightGBM
+    default_cat: default configuration of CatBoost
+    
 
 |dataset|autogluon|google|tpot|h2o|tabnet|wide_deep|default_lgb|default_cat|
 |---|---|---|---|---|---|---|---|---|
