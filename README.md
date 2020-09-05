@@ -23,10 +23,10 @@
 ## result-table(Binary Classification: metric here is ROC-AUC)
     autogluon is open-source automl from amazon
     google is google cloud automl products(26 datasets cost me 4000+HKD)
-    tpot is popular automl toolkit
+    tpot is a popular automl toolkit
     h2o is from h2o.ai, a famous AI company
-    tabnet is introduced by google cloud team, tring find a neural network architecture for tabular data
-    wide&deep is successful in recommendation system
+    tabnet is introduced by google cloud team, try to find a neural network architecture for tabular data
+    wide&deep is successful in recommendation system area
     default_lgb: default configuration of LightGBM
     default_cat: default configuration of CatBoost
     
